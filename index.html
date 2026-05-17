@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mandap Events Pvt Ltd - Fine Art Event Management & Photography">
+    <title>Mandap Events | Fine Art & Editorial</title>
+    <!-- Fonts: Cormorant Garamond for Headings, Montserrat for Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo-wrapper">
+                <img src="Logo.PNG" alt="Mandap Events Logo" class="nav-logo">
+            </div>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="nav-links">
+                <li><button class="tab-btn active" data-tab="tab-home">Home</button></li>
+                <li><button class="tab-btn" data-tab="tab-pricing">Pricing</button></li>
+                <li><button class="tab-btn btn-outline" data-tab="tab-booking">Book Us</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Area (Tabs) -->
+    <main class="content-wrapper">
+
+        <!-- TAB 1: HOME -->
+        <div id="tab-home" class="tab-content active fade-in">
+            <!-- Editorial Hero Section -->
+            <section class="hero-editorial section-padding">
+                <div class="container text-center">
+                    <h1 class="hero-title">Timeless <span class="italic">&</span> Authentic</h1>
+                    <p class="hero-manifesto">
+                        We don't pose you. We protect your peace, anticipate the moment, 
+                        and return with a gallery that feels exactly how your day felt.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Minimal Gallery Section -->
+            <section class="gallery-section section-padding">
+                <div class="container">
+                    <div class="editorial-grid">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wedding placeholder" class="editorial-img portrait">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f5c40f1620?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Detail placeholder" class="editorial-img landscape">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Event placeholder" class="editorial-img portrait">
+                    </div>
+                </div>
+            </section>
+
+            <!-- TikTok Feed Section -->
+            <section class="tiktok-feed section-padding">
+                <div class="container text-center">
+                    <h2 class="section-title">Behind the Scenes</h2>
+                    <p class="section-subtitle">Glimpses from our recent work on TikTok</p>
+                    
+                    <div class="tiktok-container">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@_mandap_" data-unique-id="_mandap_" data-embed-type="creator" style="max-width: 780px; min-width: 288px;" > <section> <a target="_blank" href="https://www.tiktok.com/@_mandap_?refer=creator_embed">@_mandap_</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- TAB 2: PRICING -->
+        <div id="tab-pricing" class="tab-content fade-in">
+            <section class="pricing-section section-padding">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h1 class="page-title">Investment</h1>
+                        <p class="page-subtitle">Curated collections for your unique celebration.</p>
+                    </div>
+
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <h3>Wedding Collections</h3>
+                            <div class="price-abstract">Starting from custom quotes</div>
+                            <ul class="pricing-features">
+                                <li>Comprehensive timeline planning</li>
+                                <li>High-resolution digital gallery</li>
+                                <li>Editorial style editing</li>
+                                <li>Sneak peeks within 48 hours</li>
+                            </ul>
+                            <button class="btn btn-outline switch-to-booking">Request Quote</button>
+                        </div>
+
+                        <div class="pricing-card">
+                            <h3>Corporate & Events</h3>
+                            <div class="price-abstract">Tailored to scope</div>
+                            <ul class="pricing-features">
+                                <li>Brand-aligned visual storytelling</li>
+                                <li>Multi-day coverage options</li>
+                                <li>Rapid turnaround for PR</li>
+                                <li>Complete set design & decor</li>
+                            </ul>
+                            <button class="btn btn-outline switch-to-booking">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- TAB 3: BOOK US -->
+        <div id="tab-booking" class="tab-content fade-in">
+            <section class="booking-section section-padding">
+                <div class="container max-w-md">
+                    <div class="text-center mb-4">
+                        <h1 class="page-title">Check our availability for your date</h1>
+                        <p class="scarcity-text italic">We take on a limited number of weddings per year, intentionally.</p>
+                    </div>
+
+                    <form class="elegant-form" id="booking-form" onsubmit="event.preventDefault(); alert('Form submitted successfully!');">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required placeholder="Jane Doe">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required placeholder="hello@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date">Event Date</label>
+                            <input type="date" id="date">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-type">What are we celebrating?</label>
+                            <select id="event-type" required>
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="wedding">Wedding / Pre-Wedding</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="other">Other Celebration</option>
+                            </select>
+                        </div>
+
+                        <!-- Dynamic Wedding Checkboxes -->
+                        <div id="wedding-options" class="dynamic-options hidden">
+                            <label class="options-label">Select all that apply:</label>
+                            <div class="checkbox-grid">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="wedding_events" value="pre_wedding">
+                                    <span class="checkmark"></span> Pre-Wedding Shoot
+                                </label>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="wedding_events" value="haldi">
+                                    <span class="checkmark"></span> Haldi
+                                </label>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="wedding_events" value="mehendi">
+                                    <span class="checkmark"></span> Mehendi
+                                </label>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="wedding_events" value="sangeet">
+                                    <span class="checkmark"></span> Sangeet
+                                </label>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="wedding_events" value="main_event">
+                                    <span class="checkmark"></span> Main Event / Ceremony
+                                </label>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="wedding_events" value="post_wedding">
+                                    <span class="checkmark"></span> Post-Wedding Shoot
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Corporate Checkboxes -->
+                        <div id="corporate-options" class="dynamic-options hidden">
+                            <label class="options-label">Select all that apply:</label>
+                            <div class="checkbox-grid">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="corp_events" value="gala">
+                                    <span class="checkmark"></span> Gala / Dinner
+                                </label>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="corp_events" value="seminar">
+                                    <span class="checkmark"></span> Seminar / Conference
+                                </label>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="corp_events" value="product_launch">
+                                    <span class="checkmark"></span> Product Launch
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="message">Tell us about your vision</label>
+                            <textarea id="message" rows="4" placeholder="How do you want your day to feel?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit-btn">Submit Inquiry</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-minimal">
+        <div class="container text-center">
+            <div class="footer-divider"></div>
+            <h3 class="footer-promise">No obligation &middot; We reply personally within 24 hours</h3>
+            
+            <div class="social-links-minimal">
+                <a href="https://instagram.com/__mandap__" target="_blank">Instagram</a>
+                <span>&middot;</span>
+                <a href="https://tiktok.com/@_mandap_" target="_blank">TikTok</a>
+            </div>
+            
+            <p class="copyright">&copy; <span id="year"></span> Mandap Events. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
