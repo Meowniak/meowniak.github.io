@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mandap Events Pvt Ltd - Fine Art Event Management & Photography">
-    <title>Mandap Events | Fine Art & Editorial</title>
-    <!-- Fonts: Cormorant Garamond for Headings, Montserrat for Body -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Mandap Events | Fine Art & Editorial Production</title>
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="nav-logo-wrapper">
-                <img src="Logo.PNG" alt="Mandap Events Logo" class="nav-logo">
+            <div class="nav-brand">
+                <a href="#" id="logo-home" class="logo-link" aria-label="Go to Homepage">
+                    <div class="nav-logo-wrapper">
+                        <img src="logos/Mandap.svg" alt="Mandap Events Logo" class="nav-logo">
+                    </div>
+                </a>
             </div>
-            
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <div class="nav-actions">
 
-            <ul class="nav-links">
-                <li><button class="tab-btn active" data-tab="tab-home">Home</button></li>
-                <li><button class="tab-btn" data-tab="tab-pricing">Pricing</button></li>
-                <li><button class="tab-btn btn-outline" data-tab="tab-booking">Book Us</button></li>
-            </ul>
+                <ul class="nav-links">
+                    <li><button class="tab-btn active" data-tab="tab-home">Home</button></li>
+                    <li><button class="tab-btn btn-outline" data-tab="tab-booking">Book Us</button></li>
+                </ul>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -39,25 +42,218 @@
     <main class="content-wrapper">
 
         <!-- TAB 1: HOME -->
-        <div id="tab-home" class="tab-content active fade-in">
-            <!-- Editorial Hero Section -->
-            <section class="hero-editorial section-padding">
+        <div id="tab-home" class="tab-content active">
+            <!-- Centered Text Section -->
+            <section class="editorial-hero-text section-padding-y">
                 <div class="container text-center">
-                    <h1 class="hero-title">Timeless <span class="italic">&</span> Authentic</h1>
-                    <p class="hero-manifesto">
-                        We don't pose you. We protect your peace, anticipate the moment, 
-                        and return with a gallery that feels exactly how your day felt.
-                    </p>
+                    <h1 class="hero-title-simple">Timeless & Authentic</h1>
+                    <p class="hero-subtitle-simple-para">We don't pose you, nor do we run your day like a film set. We
+                        protect your peace, let the moments happen naturally, and document the genuine, unscripted
+                        history of your family coming together.</p>
                 </div>
             </section>
 
-            <!-- Minimal Gallery Section -->
-            <section class="gallery-section section-padding">
+            <!-- Top Portraits Row (No Text) -->
+            <section class="gallery-section top-gallery section-padding-bottom">
                 <div class="container">
                     <div class="editorial-grid">
-                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wedding placeholder" class="editorial-img portrait">
-                        <img src="https://images.unsplash.com/photo-1519167758481-83f5c40f1620?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Detail placeholder" class="editorial-img landscape">
-                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Event placeholder" class="editorial-img portrait">
+                        <div class="gallery-item col-4">
+                            <div class="image-wrapper">
+                                <img src="assets/NIS_2836.webp" alt="Wedding portrait 1" class="editorial-img">
+                            </div>
+                        </div>
+                        <div class="gallery-item col-4">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP09312_jpgfinal.webp" alt="Wedding portrait 2" class="editorial-img">
+                            </div>
+                        </div>
+                        <div class="gallery-item col-4">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP00458.webp" alt="Wedding portrait 3" class="editorial-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mid Portraits Row (Below Text) -->
+            <section class="gallery-section mid-gallery section-padding-y">
+                <div class="container">
+                    <div class="editorial-grid">
+                        <div class="gallery-item col-4">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP05342.webp" alt="Wedding portrait 4" class="editorial-img">
+                            </div>
+                        </div>
+                        <div class="gallery-item col-4">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP06391.webp" alt="Wedding portrait 5" class="editorial-img">
+                            </div>
+                        </div>
+                        <div class="gallery-item col-4">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP05844.webp" alt="Wedding portrait 6" class="editorial-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Split Row Section 1 (Left Image, Right Text) -->
+            <section class="split-editorial-section section-padding-y">
+                <div class="container">
+                    <div class="split-row">
+                        <div class="split-col split-image col-6">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP05870.webp" alt="Bridal portrait details" class="editorial-img">
+                            </div>
+                        </div>
+                        <div class="split-col split-text col-6">
+                            <div class="split-text-inner">
+                                <h2 class="split-title">Expert Direction, Not Posing</h2>
+                                <p class="split-paragraph">We guide you gently when the light is perfect, but we
+                                    prioritize the real, unforced version of you. No stiff stances, no checklist
+                                    performance. We curate the light, direct the space, and let your genuine connection
+                                    unfold naturally.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Split Row Section 2 (Left Text, Right Image) -->
+            <section class="split-editorial-section section-padding-y">
+                <div class="container">
+                    <div class="split-row reverse">
+                        <div class="split-col split-text col-6">
+                            <div class="split-text-inner">
+                                <h2 class="split-title">Documentary Storytelling</h2>
+                                <p class="split-paragraph">Every laugh, every quiet glance, every tear. We capture the
+                                    day exactly as it felt, preserving the atmosphere, the light, and the deep emotions
+                                    in their truest form. You will not need to manage us or worry about what comes next.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="split-col split-image col-6">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP06269.webp" alt="Couple walk portrait" class="editorial-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Landscape Image with Text Overlay -->
+            <section class="parallax-overlay-section section-padding-y">
+                <div class="container">
+                    <div class="gallery-item col-12 full-bleed-hero-overlay">
+                        <div class="image-wrapper">
+                            <img src="assets/MDP00484.webp" alt="Wedding landscape ceremony" class="editorial-img">
+                            <div class="image-overlay-content">
+                                <h2 class="overlay-quote">"We want you to look back at these photos and remember how it
+                                    felt, not just how it looked."</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Portfolio Grid (Remaining 14 Photos) -->
+            <section class="gallery-section main-portfolio section-padding-y">
+                <div class="container">
+                    <div class="editorial-grid">
+                        <!-- Diptych 1 -->
+                        <div class="gallery-item col-6">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP06321.webp" alt="Wedding portrait details" class="editorial-img">
+                            </div>
+                        </div>
+                        <div class="gallery-item col-6">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP04986.webp" alt="Bridal portrait details" class="editorial-img">
+                            </div>
+                        </div>
+
+                        <!-- Landscape 1 -->
+                        <div class="gallery-item col-12">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP00412.webp" alt="Couples portrait landscape" class="editorial-img">
+                            </div>
+                        </div>
+
+                        <!-- Asymmetric Pair 1 -->
+                        <div class="gallery-item col-5">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP09620.webp" alt="Wedding portrait groom" class="editorial-img">
+                            </div>
+                        </div>
+                        <div class="gallery-item col-7">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP00534.webp" alt="Couples walk landscape" class="editorial-img">
+                            </div>
+                        </div>
+
+                        <!-- Diptych 2 -->
+                        <div class="gallery-item col-6">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP09693.webp" alt="Wedding details reception" class="editorial-img">
+                            </div>
+                        </div>
+                        <div class="gallery-item col-6">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP09854.webp" alt="Wedding portrait details reception"
+                                    class="editorial-img">
+                            </div>
+                        </div>
+
+                        <!-- Landscape 2 -->
+                        <div class="gallery-item col-12">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP05532.webp" alt="Wedding couple walk outdoor ceremony"
+                                    class="editorial-img">
+                            </div>
+                        </div>
+
+                        <!-- Asymmetric Pair 2 -->
+                        <div class="gallery-item col-7">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP05555.webp" alt="Wedding couple walk outdoor ceremony"
+                                    class="editorial-img">
+                            </div>
+                        </div>
+                        <div class="gallery-item col-5">
+                            <div class="image-wrapper">
+                                <img src="assets/NIS_2120.webp" alt="Wedding portrait details" class="editorial-img">
+                            </div>
+                        </div>
+
+                        <!-- Landscape 3 -->
+                        <div class="gallery-item col-12">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP06011.webp" alt="Wedding reception design" class="editorial-img">
+                            </div>
+                        </div>
+
+                        <!-- Asymmetric Pair 3 -->
+                        <div class="gallery-item col-5">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP04988.webp" alt="Wedding portrait ceremony" class="editorial-img">
+                            </div>
+                        </div>
+                        <div class="gallery-item col-7">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP06050.webp" alt="Wedding reception outdoor design"
+                                    class="editorial-img">
+                            </div>
+                        </div>
+
+                        <!-- Landscape 4 -->
+                        <div class="gallery-item col-12">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP06104.webp" alt="Wedding reception outdoor layout"
+                                    class="editorial-img">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -65,146 +261,153 @@
             <!-- TikTok Feed Section -->
             <section class="tiktok-feed section-padding">
                 <div class="container text-center">
-                    <h2 class="section-title">Behind the Scenes</h2>
-                    <p class="section-subtitle">Glimpses from our recent work on TikTok</p>
-                    
-                    <div class="tiktok-container">
-                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@_mandap_" data-unique-id="_mandap_" data-embed-type="creator" style="max-width: 780px; min-width: 288px;" > <section> <a target="_blank" href="https://www.tiktok.com/@_mandap_?refer=creator_embed">@_mandap_</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
-                    </div>
-                </div>
-            </section>
-        </div>
+                    <h2 class="section-title">Behind the lens</h2>
+                    <p class="section-subtitle">Real moments and raw clips from our recent celebrations.</p>
 
-        <!-- TAB 2: PRICING -->
-        <div id="tab-pricing" class="tab-content fade-in">
-            <section class="pricing-section section-padding">
-                <div class="container">
-                    <div class="text-center mb-5">
-                        <h1 class="page-title">Investment</h1>
-                        <p class="page-subtitle">Curated collections for your unique celebration.</p>
-                    </div>
-
-                    <div class="pricing-grid">
-                        <div class="pricing-card">
-                            <h3>Wedding Collections</h3>
-                            <div class="price-abstract">Starting from custom quotes</div>
-                            <ul class="pricing-features">
-                                <li>Comprehensive timeline planning</li>
-                                <li>High-resolution digital gallery</li>
-                                <li>Editorial style editing</li>
-                                <li>Sneak peeks within 48 hours</li>
-                            </ul>
-                            <button class="btn btn-outline switch-to-booking">Request Quote</button>
+                    <div class="tiktok-outer-card">
+                        <div class="tiktok-header-mock">
+                            <span class="mock-dot red"></span>
+                            <span class="mock-dot yellow"></span>
+                            <span class="mock-dot green"></span>
                         </div>
-
-                        <div class="pricing-card">
-                            <h3>Corporate & Events</h3>
-                            <div class="price-abstract">Tailored to scope</div>
-                            <ul class="pricing-features">
-                                <li>Brand-aligned visual storytelling</li>
-                                <li>Multi-day coverage options</li>
-                                <li>Rapid turnaround for PR</li>
-                                <li>Complete set design & decor</li>
-                            </ul>
-                            <button class="btn btn-outline switch-to-booking">Request Quote</button>
+                        <div class="tiktok-container">
+                            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@_mandap_"
+                                data-unique-id="_mandap_" data-embed-type="creator"
+                                style="max-width: 780px; min-width: 288px;">
+                                <section>
+                                    <a target="_blank"
+                                        href="https://www.tiktok.com/@_mandap_?refer=creator_embed">@_mandap_</a>
+                                </section>
+                            </blockquote>
+                            <script async src="https://www.tiktok.com/embed.js"></script>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
+
+
 
         <!-- TAB 3: BOOK US -->
-        <div id="tab-booking" class="tab-content fade-in">
+        <div id="tab-booking" class="tab-content">
             <section class="booking-section section-padding">
                 <div class="container max-w-md">
-                    <div class="text-center mb-4">
-                        <h1 class="page-title">Check our availability for your date</h1>
-                        <p class="scarcity-text italic">We take on a limited number of weddings per year, intentionally.</p>
+                    <div class="text-center">
+                        <h1 class="page-title">Let's connect</h1>
+                        <p class="scarcity-text italic">We take on a limited number of weddings each year to ensure we
+                            give every couple our full energy. Tell us about your story.</p>
                     </div>
 
-                    <form class="elegant-form" id="booking-form" onsubmit="event.preventDefault(); alert('Form submitted successfully!');">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" required placeholder="Jane Doe">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" required placeholder="hello@example.com">
+                    <div class="booking-wizard-container">
+                        <!-- Step Progress Indicator -->
+                        <div class="wizard-progress">
+                            <div class="progress-bar-fill"></div>
+                            <div class="progress-step active" data-step="1">1</div>
+                            <div class="progress-step" data-step="2">2</div>
+                            <div class="progress-step" data-step="3">3</div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="date">Event Date</label>
-                            <input type="date" id="date">
-                        </div>
+                        <form class="elegant-form" id="booking-form">
+                            <!-- STEP 1: Basic Info -->
+                            <div class="wizard-step-content active" data-step="1">
+                                <h3 class="mb-4 italic">Introduce Yourself</h3>
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" required placeholder="Jane Doe">
+                                </div>
 
-                        <div class="form-group">
-                            <label for="event-type">What are we celebrating?</label>
-                            <select id="event-type" required>
-                                <option value="" disabled selected>Select an option</option>
-                                <option value="wedding">Wedding / Pre-Wedding</option>
-                                <option value="corporate">Corporate Event</option>
-                                <option value="other">Other Celebration</option>
-                            </select>
-                        </div>
-
-                        <!-- Dynamic Wedding Checkboxes -->
-                        <div id="wedding-options" class="dynamic-options hidden">
-                            <label class="options-label">Select all that apply:</label>
-                            <div class="checkbox-grid">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox" name="wedding_events" value="pre_wedding">
-                                    <span class="checkmark"></span> Pre-Wedding Shoot
-                                </label>
-                                <label class="custom-checkbox">
-                                    <input type="checkbox" name="wedding_events" value="haldi">
-                                    <span class="checkmark"></span> Haldi
-                                </label>
-                                <label class="custom-checkbox">
-                                    <input type="checkbox" name="wedding_events" value="mehendi">
-                                    <span class="checkmark"></span> Mehendi
-                                </label>
-                                <label class="custom-checkbox">
-                                    <input type="checkbox" name="wedding_events" value="sangeet">
-                                    <span class="checkmark"></span> Sangeet
-                                </label>
-                                <label class="custom-checkbox">
-                                    <input type="checkbox" name="wedding_events" value="main_event">
-                                    <span class="checkmark"></span> Main Event / Ceremony
-                                </label>
-                                <label class="custom-checkbox">
-                                    <input type="checkbox" name="wedding_events" value="post_wedding">
-                                    <span class="checkmark"></span> Post-Wedding Shoot
-                                </label>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" required placeholder="hello@example.com">
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Dynamic Corporate Checkboxes -->
-                        <div id="corporate-options" class="dynamic-options hidden">
-                            <label class="options-label">Select all that apply:</label>
-                            <div class="checkbox-grid">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox" name="corp_events" value="gala">
-                                    <span class="checkmark"></span> Gala / Dinner
-                                </label>
-                                <label class="custom-checkbox">
-                                    <input type="checkbox" name="corp_events" value="seminar">
-                                    <span class="checkmark"></span> Seminar / Conference
-                                </label>
-                                <label class="custom-checkbox">
-                                    <input type="checkbox" name="corp_events" value="product_launch">
-                                    <span class="checkmark"></span> Product Launch
-                                </label>
+                            <!-- STEP 2: Event Details -->
+                            <div class="wizard-step-content" data-step="2">
+                                <h3 class="mb-4 italic">Event Logistics</h3>
+                                <div class="form-group">
+                                    <label for="date">Event Date</label>
+                                    <input type="date" id="date" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="event-type">What are we celebrating?</label>
+                                    <select id="event-type" required>
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option value="wedding">Wedding / Pre-Wedding</option>
+                                        <option value="corporate">Corporate Event</option>
+                                        <option value="other">Other Celebration</option>
+                                    </select>
+                                </div>
+
+                                <!-- Dynamic Wedding Checkboxes -->
+                                <div id="wedding-options" class="dynamic-options hidden">
+                                    <label class="options-label">Select all that apply:</label>
+                                    <div class="checkbox-grid">
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" name="wedding_events" value="pre_wedding">
+                                            <span class="checkmark"></span> Pre-Wedding Shoot
+                                        </label>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" name="wedding_events" value="haldi">
+                                            <span class="checkmark"></span> Haldi
+                                        </label>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" name="wedding_events" value="mehendi">
+                                            <span class="checkmark"></span> Mehendi
+                                        </label>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" name="wedding_events" value="sangeet">
+                                            <span class="checkmark"></span> Sangeet
+                                        </label>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" name="wedding_events" value="main_event">
+                                            <span class="checkmark"></span> Main Event / Ceremony
+                                        </label>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" name="wedding_events" value="post_wedding">
+                                            <span class="checkmark"></span> Post-Wedding Shoot
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Dynamic Corporate Checkboxes -->
+                                <div id="corporate-options" class="dynamic-options hidden">
+                                    <label class="options-label">Select all that apply:</label>
+                                    <div class="checkbox-grid">
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" name="corp_events" value="gala">
+                                            <span class="checkmark"></span> Gala / Dinner
+                                        </label>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" name="corp_events" value="seminar">
+                                            <span class="checkmark"></span> Seminar / Conference
+                                        </label>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" name="corp_events" value="product_launch">
+                                            <span class="checkmark"></span> Product Launch
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group mt-3">
-                            <label for="message">Tell us about your vision</label>
-                            <textarea id="message" rows="4" placeholder="How do you want your day to feel?"></textarea>
-                        </div>
+                            <!-- STEP 3: Message & Vision -->
+                            <div class="wizard-step-content" data-step="3">
+                                <h3 class="mb-4 italic">Share Your Vision</h3>
+                                <div class="form-group">
+                                    <label for="message">Tell us about your event</label>
+                                    <textarea id="message" rows="5" required
+                                        placeholder="How do you want your day to feel? Describe your vision..."></textarea>
+                                </div>
+                            </div>
 
-                        <button type="submit" class="btn btn-primary submit-btn">Submit Inquiry</button>
-                    </form>
+                            <!-- Wizard Control Buttons -->
+                            <div class="wizard-actions">
+                                <button type="button" id="btn-back" class="btn btn-back hidden">Back</button>
+                                <button type="button" id="btn-next" class="btn btn-gold">Continue</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </section>
         </div>
@@ -215,18 +418,19 @@
     <footer class="footer-minimal">
         <div class="container text-center">
             <div class="footer-divider"></div>
-            <h3 class="footer-promise">No obligation &middot; We reply personally within 24 hours</h3>
-            
+            <h3 class="footer-promise">We read every message and respond personally within 24 hours.</h3>
+
             <div class="social-links-minimal">
                 <a href="https://instagram.com/__mandap__" target="_blank">Instagram</a>
                 <span>&middot;</span>
                 <a href="https://tiktok.com/@_mandap_" target="_blank">TikTok</a>
             </div>
-            
+
             <p class="copyright">&copy; <span id="year"></span> Mandap Events. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
