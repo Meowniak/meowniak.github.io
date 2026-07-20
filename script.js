@@ -304,6 +304,101 @@ document.addEventListener('DOMContentLoaded', () => {
         galleryItems.forEach(item => item.classList.add('visible'));
     }
 
+    // =========================================
+    // 10. Image Carousel Controller
+    // =========================================
+    function initCarousel() {
+        const container = document.querySelector('.carousel-container');
+        if (!container) return;
+
+        const slides = container.querySelectorAll('.carousel-slide');
+        const dots = container.querySelectorAll('.carousel-dot');
+        const prevBtn = container.querySelector('.carousel-control.prev');
+        const nextBtn = container.querySelector('.carousel-control.next');
+        
+        let currentIndex = 0;
+        let autoplayTimer = null;
+        const autoplayInterval = 4000; // 4 seconds
+
+        function showSlide(index) {
+            if (index >= slides.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else {
+                currentIndex = index;
+            }
+
+            slides.forEach((slide, i) => {
+                if (i === currentIndex) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                if (i === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        function startAutoplay() {
+            stopAutoplay();
+            autoplayTimer = setInterval(nextSlide, autoplayInterval);
+        }
+
+        function stopAutoplay() {
+            if (autoplayTimer) {
+                clearInterval(autoplayTimer);
+            }
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                prevSlide();
+                startAutoplay();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                nextSlide();
+                startAutoplay();
+            });
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showSlide(index);
+                startAutoplay();
+            });
+        });
+
+        container.addEventListener('mouseenter', stopAutoplay);
+        container.addEventListener('mouseleave', startAutoplay);
+
+        // Initial setup
+        showSlide(0);
+        startAutoplay();
+    }
+
+    initCarousel();
+
     // Initialize Wizard
     updateWizard();
 });
