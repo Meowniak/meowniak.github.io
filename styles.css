@@ -525,12 +525,11 @@ button, input, select, textarea {
 .gallery-item.col-12 .editorial-img {
     object-position: center center;
 }
-/* Prevent cutting off heads in group landscape images */
 .gallery-item img[src*="MDP05532.webp"] {
-    object-position: center 65% !important;
+    object-position: center 50% !important;
 }
 .gallery-item img[src*="MDP06011.webp"] {
-    object-position: center 60% !important;
+    object-position: center 45% !important;
 }
 .gallery-item img[src*="MDP06104.webp"] {
     object-position: center 85% !important;
