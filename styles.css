@@ -321,6 +321,39 @@ button, input, select, textarea {
     color: #FFFFFF;
 }
 
+/* Navigation Social Links */
+.nav-social-item {
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-burgundy);
+    transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.nav-social-link:hover {
+    transform: translateY(-2px);
+    color: var(--accent-gold-hover);
+}
+
+.nav-social-icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* Adjust size inside mobile overlay menu */
+@media (max-width: 768px) {
+    .nav-social-icon {
+        width: 22px;
+        height: 22px;
+    }
+}
+
 /* Menu Navigation list */
 
 /* Hamburger menu */
