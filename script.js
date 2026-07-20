@@ -404,6 +404,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initCarousel();
 
+    // =========================================
+    // 11. See More Interactive Portfolio Stack
+    // =========================================
+    const seeMoreTrigger = document.getElementById('see-more-trigger');
+    const seeMoreSection = document.querySelector('.portfolio-see-more-section');
+    const mainPortfolio = document.querySelector('.gallery-section.main-portfolio');
+
+    if (seeMoreTrigger && seeMoreSection && mainPortfolio) {
+        seeMoreTrigger.addEventListener('click', () => {
+            // Fade out the stacked placeholder
+            seeMoreSection.classList.add('fade-out');
+            
+            // Wait for fade out animation to complete, then hide section and show full gallery
+            setTimeout(() => {
+                seeMoreSection.style.display = 'none';
+                mainPortfolio.classList.add('is-visible');
+            }, 600);
+        });
+    }
+
     // Initialize Wizard
     updateWizard();
 });

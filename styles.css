@@ -310,8 +310,9 @@ button, input, select, textarea {
 }
 
 .tab-btn.btn-outline:hover {
-    border-color: var(--text-primary);
-    color: var(--text-primary);
+    background-color: var(--accent-burgundy);
+    border-color: var(--accent-burgundy);
+    color: #FFFFFF !important;
 }
 
 .tab-btn.btn-outline.active {
@@ -1539,5 +1540,162 @@ select {
 /* Specific Image Positioning Overrides */
 img[src*="MDP06104.webp"] {
     object-position: center bottom;
+}
+
+/* =========================================
+   See More Stacked Photo Deck
+   ========================================= */
+.portfolio-see-more-section {
+    width: 100%;
+    display: block;
+    padding-bottom: 3rem;
+}
+
+.portfolio-see-more-section.fade-out {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease, margin 0.6s ease;
+    pointer-events: none;
+    margin-bottom: -480px; /* pull layout up when hidden */
+}
+
+.portfolio-see-more-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 480px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+/* Photo Deck Stack (Unevenly Piled) */
+.photo-deck {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.deck-photo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 250px;
+    height: 330px;
+    background: #FFFFFF;
+    padding: 8px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+    transition: transform 0.5s ease;
+}
+
+.deck-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Uneven offsets and angles */
+.deck-photo.photo-1 {
+    transform: translate(-65%, -55%) rotate(-12deg);
+    z-index: 2;
+}
+
+.deck-photo.photo-2 {
+    transform: translate(-35%, -45%) rotate(8deg);
+    z-index: 3;
+}
+
+.deck-photo.photo-3 {
+    transform: translate(-55%, -35%) rotate(-5deg);
+    z-index: 4;
+}
+
+.deck-photo.photo-4 {
+    transform: translate(-45%, -50%) rotate(4deg);
+    z-index: 5;
+}
+
+/* Glassy Overlay Box */
+.glassy-see-more-box {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    padding: 3rem 2rem;
+    background: rgba(250, 253, 251, 0.45); /* pristine green-tinted off-white transparent */
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius);
+    text-align: center;
+    z-index: 10;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glassy-see-more-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px rgba(162, 1, 24, 0.08); /* subtle red brand shadow */
+}
+
+.glassy-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.glassy-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Initially hidden grid */
+.gallery-section.main-portfolio.hidden-initially {
+    display: none;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-section.main-portfolio.hidden-initially.is-visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Overrides for Photo Deck */
+@media (max-width: 768px) {
+    .portfolio-see-more-wrapper {
+        height: 380px;
+    }
+    
+    .deck-photo {
+        width: 170px;
+        height: 230px;
+        padding: 5px;
+    }
+    
+    .glassy-see-more-box {
+        padding: 2rem 1.5rem;
+    }
+    
+    .glassy-title {
+        font-size: 1.6rem;
+    }
 }
 
