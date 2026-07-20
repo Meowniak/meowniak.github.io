@@ -532,6 +532,9 @@ button, input, select, textarea {
 .gallery-item img[src*="MDP06011.webp"] {
     object-position: center 60% !important;
 }
+.gallery-item img[src*="MDP06104.webp"] {
+    object-position: center 85% !important;
+}
 
 /* Captions Editorial Reveal */
 .gallery-info {
