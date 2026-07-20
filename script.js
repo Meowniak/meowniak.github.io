@@ -405,22 +405,31 @@ document.addEventListener('DOMContentLoaded', () => {
     initCarousel();
 
     // =========================================
-    // 11. See More Interactive Portfolio Stack
+    // 11. See More Interactive Portfolio Reveal
     // =========================================
     const seeMoreTrigger = document.getElementById('see-more-trigger');
-    const seeMoreSection = document.querySelector('.portfolio-see-more-section');
+    const glassyOverlay = document.querySelector('.glassy-see-more-overlay');
+    const placeholderItem = document.querySelector('.see-more-placeholder-item');
     const mainPortfolio = document.querySelector('.gallery-section.main-portfolio');
 
-    if (seeMoreTrigger && seeMoreSection && mainPortfolio) {
-        seeMoreTrigger.addEventListener('click', () => {
-            // Fade out the stacked placeholder
-            seeMoreSection.classList.add('fade-out');
-            
-            // Wait for fade out animation to complete, then hide section and show full gallery
+    if (seeMoreTrigger && glassyOverlay && placeholderItem && mainPortfolio) {
+        seeMoreTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // 1. Fade out the glassy overlay
+            glassyOverlay.classList.add('fade-out');
+
+            // 2. Remove blur from the background landscape image
+            placeholderItem.classList.add('revealed');
+
+            // 3. Make all hidden portfolio grid items visible
+            mainPortfolio.classList.add('is-visible');
+
+            // 4. Clean up overlay from DOM after transition completes
             setTimeout(() => {
-                seeMoreSection.style.display = 'none';
-                mainPortfolio.classList.add('is-visible');
-            }, 600);
+                glassyOverlay.style.display = 'none';
+            }, 800);
         });
     }
 

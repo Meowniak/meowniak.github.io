@@ -77,15 +77,19 @@
                                 <img src="assets/MDP05844.webp" alt="Wedding portrait 6" class="carousel-img">
                             </div>
                         </div>
-                        
+
                         <!-- Transparent Navigation Controls -->
                         <button class="carousel-control prev" aria-label="Previous Slide">
-                            <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                            </svg>
                         </button>
                         <button class="carousel-control next" aria-label="Next Slide">
-                            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                            </svg>
                         </button>
-                        
+
                         <!-- Pagination Dots -->
                         <div class="carousel-dots">
                             <span class="carousel-dot active" data-index="0"></span>
@@ -158,80 +162,55 @@
                 </div>
             </section>
 
-            <!-- See More Stacked Photo Deck Placeholder -->
-            <section class="portfolio-see-more-section section-padding-y">
-                <div class="container">
-                    <div class="portfolio-see-more-wrapper">
-                        <!-- Unevenly stacked photo deck background -->
-                        <div class="photo-deck">
-                            <div class="deck-photo photo-1">
-                                <img src="assets/MDP06321.webp" alt="Wedding preview details">
-                            </div>
-                            <div class="deck-photo photo-2">
-                                <img src="assets/MDP04986.webp" alt="Bridal preview details">
-                            </div>
-                            <div class="deck-photo photo-3">
-                                <img src="assets/MDP09620.webp" alt="Wedding preview groom">
-                            </div>
-                            <div class="deck-photo photo-4">
-                                <img src="assets/NIS_2120.webp" alt="Wedding preview walk">
-                            </div>
-                        </div>
-
-                        <!-- Glassy overlay box on top -->
-                        <div class="glassy-see-more-box">
-                            <div class="glassy-content">
-                                <h3 class="glassy-title">The Complete Gallery</h3>
-                                <p class="glassy-subtitle">Explore 14 additional documentary photographs documenting the unscripted history of the family.</p>
-                                <button class="btn btn-gold see-more-btn" id="see-more-trigger">See More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <!-- Main Portfolio Grid (Remaining 14 Photos) -->
-            <section class="gallery-section main-portfolio section-padding-y hidden-initially">
+            <section class="gallery-section main-portfolio section-padding-y">
                 <div class="container">
                     <div class="editorial-grid">
+                        <!-- See More Landscape Placeholder (First photo in grid) -->
+                        <div class="gallery-item col-12 full-bleed-hero-overlay see-more-placeholder-item visible">
+                            <div class="image-wrapper">
+                                <img src="assets/MDP00412.webp" alt="Couples portrait landscape" class="editorial-img placeholder-landscape-img">
+                                <div class="glassy-see-more-overlay">
+                                    <div class="glassy-content">
+                                        <h3 class="glassy-title">The Complete Gallery</h3>
+                                        <p class="glassy-subtitle">Explore 14 additional documentary photographs documenting the unscripted history of the family.</p>
+                                        <button class="btn btn-gold see-more-btn" id="see-more-trigger">See More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Diptych 1 -->
-                        <div class="gallery-item col-6">
+                        <div class="gallery-item col-6 hidden-initially">
                             <div class="image-wrapper">
                                 <img src="assets/MDP06321.webp" alt="Wedding portrait details" class="editorial-img">
                             </div>
                         </div>
-                        <div class="gallery-item col-6">
+                        <div class="gallery-item col-6 hidden-initially">
                             <div class="image-wrapper">
                                 <img src="assets/MDP04986.webp" alt="Bridal portrait details" class="editorial-img">
                             </div>
                         </div>
 
-                        <!-- Landscape 1 -->
-                        <div class="gallery-item col-12">
-                            <div class="image-wrapper">
-                                <img src="assets/MDP00412.webp" alt="Couples portrait landscape" class="editorial-img">
-                            </div>
-                        </div>
-
                         <!-- Asymmetric Pair 1 -->
-                        <div class="gallery-item col-5">
+                        <div class="gallery-item col-5 hidden-initially">
                             <div class="image-wrapper">
                                 <img src="assets/MDP09620.webp" alt="Wedding portrait groom" class="editorial-img">
                             </div>
                         </div>
-                        <div class="gallery-item col-7">
+                        <div class="gallery-item col-7 hidden-initially">
                             <div class="image-wrapper">
                                 <img src="assets/MDP00534.webp" alt="Couples walk landscape" class="editorial-img">
                             </div>
                         </div>
 
                         <!-- Diptych 2 -->
-                        <div class="gallery-item col-6">
+                        <div class="gallery-item col-6 hidden-initially">
                             <div class="image-wrapper">
                                 <img src="assets/MDP09693.webp" alt="Wedding details reception" class="editorial-img">
                             </div>
                         </div>
-                        <div class="gallery-item col-6">
+                        <div class="gallery-item col-6 hidden-initially">
                             <div class="image-wrapper">
                                 <img src="assets/MDP09854.webp" alt="Wedding portrait details reception"
                                     class="editorial-img">
@@ -239,7 +218,7 @@
                         </div>
 
                         <!-- Landscape 2 -->
-                        <div class="gallery-item col-12">
+                        <div class="gallery-item col-12 hidden-initially">
                             <div class="image-wrapper">
                                 <img src="assets/MDP05532.webp" alt="Wedding couple walk outdoor ceremony"
                                     class="editorial-img">
@@ -247,32 +226,32 @@
                         </div>
 
                         <!-- Asymmetric Pair 2 -->
-                        <div class="gallery-item col-7">
+                        <div class="gallery-item col-7 hidden-initially">
                             <div class="image-wrapper">
                                 <img src="assets/MDP05555.webp" alt="Wedding couple walk outdoor ceremony"
                                     class="editorial-img">
                             </div>
                         </div>
-                        <div class="gallery-item col-5">
+                        <div class="gallery-item col-5 hidden-initially">
                             <div class="image-wrapper">
                                 <img src="assets/NIS_2120.webp" alt="Wedding portrait details" class="editorial-img">
                             </div>
                         </div>
 
                         <!-- Landscape 3 -->
-                        <div class="gallery-item col-12">
+                        <div class="gallery-item col-12 hidden-initially">
                             <div class="image-wrapper">
                                 <img src="assets/MDP06011.webp" alt="Wedding reception design" class="editorial-img">
                             </div>
                         </div>
 
                         <!-- Asymmetric Pair 3 -->
-                        <div class="gallery-item col-5">
+                        <div class="gallery-item col-5 hidden-initially">
                             <div class="image-wrapper">
                                 <img src="assets/MDP04988.webp" alt="Wedding portrait ceremony" class="editorial-img">
                             </div>
                         </div>
-                        <div class="gallery-item col-7">
+                        <div class="gallery-item col-7 hidden-initially">
                             <div class="image-wrapper">
                                 <img src="assets/MDP06050.webp" alt="Wedding reception outdoor design"
                                     class="editorial-img">
@@ -280,7 +259,7 @@
                         </div>
 
                         <!-- Landscape 4 -->
-                        <div class="gallery-item col-12">
+                        <div class="gallery-item col-12 hidden-initially">
                             <div class="image-wrapper">
                                 <img src="assets/MDP06104.webp" alt="Wedding reception outdoor layout"
                                     class="editorial-img">
