@@ -329,11 +329,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentIndex = index;
             }
 
+            const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+            const nextIndex = (currentIndex + 1) % slides.length;
+
             slides.forEach((slide, i) => {
+                // Reset classes first
+                slide.classList.remove('active', 'prev-slide', 'next-slide');
+                
                 if (i === currentIndex) {
                     slide.classList.add('active');
-                } else {
-                    slide.classList.remove('active');
+                } else if (i === prevIndex) {
+                    slide.classList.add('prev-slide');
+                } else if (i === nextIndex) {
+                    slide.classList.add('next-slide');
                 }
             });
 

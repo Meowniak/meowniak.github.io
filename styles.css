@@ -14,9 +14,9 @@
     --text-muted: #808B84;           /* Muted sage grey */
     --accent-burgundy: #A20118;      /* Signature Brand Red */
     --accent-burgundy-rgb: 162, 1, 24;
-    --accent-gold: #B5966D;
-    --accent-gold-rgb: 181, 150, 109;
-    --accent-gold-hover: #9E8058;
+    --accent-gold: #A20118;          /* Changed to Brand Red logo color */
+    --accent-gold-rgb: 162, 1, 24;   /* Changed to Brand Red logo color RGB */
+    --accent-gold-hover: #830113;    /* Changed to darker Brand Red hover color */
     --border-color: rgba(162, 1, 24, 0.15); /* Brand red border tint for high contrast */
     --card-shadow: 0 15px 40px rgba(162, 1, 24, 0.04);
     
@@ -1089,15 +1089,16 @@ select {
    ========================================= */
 .carousel-section {
     width: 100%;
+    position: relative;
 }
 
 .carousel-container {
     position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     aspect-ratio: 4/5;
-    max-height: 700px;
+    max-height: 500px;
     overflow: hidden;
     background-color: #FFFFFF; /* White background to fill the gaps */
 }
@@ -1116,7 +1117,7 @@ select {
     height: 100%;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 1.2s;
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0.8s, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 1;
 }
 
@@ -1138,8 +1139,8 @@ select {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     background-color: rgba(0, 0, 0, 0.35); /* Dark transparent background for visibility */
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
@@ -1161,33 +1162,33 @@ select {
 }
 
 .carousel-control svg {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     fill: currentColor;
 }
 
 .carousel-control.prev {
-    left: 20px;
+    left: 15px;
 }
 
 .carousel-control.next {
-    right: 20px;
+    right: 15px;
 }
 
 /* Pagination Dots */
 .carousel-dots {
     position: absolute;
-    bottom: 25px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 12px;
+    gap: 8px;
     z-index: 10;
 }
 
 .carousel-dot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.3); /* Dark dots for visibility on white background */
     cursor: pointer;
@@ -1201,8 +1202,119 @@ select {
 
 .carousel-dot.active {
     background-color: #000000; /* Solid black for active dot indicator */
-    transform: scale(1.25);
+    transform: scale(1.2);
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Desktop Cover Flow / 3D Layout overrides */
+@media (min-width: 769px) {
+    .carousel-section {
+        padding-bottom: 80px; /* space for dots below */
+        overflow: visible;
+    }
+
+    .carousel-container {
+        max-width: 1200px;
+        aspect-ratio: 16/7; /* wider layout for cover flow to take up proper space */
+        max-height: 520px;
+        background-color: transparent;
+        overflow: visible; /* show scaled side slides */
+    }
+
+    .carousel-slides {
+        perspective: 1500px;
+        transform-style: preserve-3d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .carousel-slide {
+        position: absolute;
+        left: 35%; /* Center the slide horizontally: (100% - 30%) / 2 */
+        top: 5%; /* Center the slide vertically: (100% - 90%) / 2 */
+        width: 30%; /* each slide is 30% width */
+        height: 90%;
+        opacity: 0;
+        visibility: hidden;
+        transform: translate3d(0, 0, -350px) rotateY(0) scale(0.8);
+        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                    visibility 0.8s;
+        z-index: 1;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        border-radius: var(--radius);
+        background-color: #FFFFFF;
+        padding: 8px; /* white framing border */
+    }
+
+    /* Active Slide (Focus State & Scale Up) */
+    .carousel-slide.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translate3d(0, 0, 150px) rotateY(0) scale(1.1);
+        z-index: 10;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+    }
+
+    /* Hover Pop on Active Slide */
+    .carousel-slide.active:hover {
+        transform: translate3d(0, -12px, 180px) rotateY(0) scale(1.13);
+        box-shadow: 0 35px 70px rgba(0, 0, 0, 0.28);
+    }
+
+    /* Left Side Slide (Cover Flow Previous) */
+    .carousel-slide.prev-slide {
+        opacity: 0.55;
+        visibility: visible;
+        transform: translate3d(-110%, 0, -100px) rotateY(35deg) scale(0.9);
+        z-index: 5;
+    }
+
+    /* Right Side Slide (Cover Flow Next) */
+    .carousel-slide.next-slide {
+        opacity: 0.55;
+        visibility: visible;
+        transform: translate3d(110%, 0, -100px) rotateY(-35deg) scale(0.9);
+        z-index: 5;
+    }
+
+    /* Hover Pop on Side Slides */
+    .carousel-slide.prev-slide:hover {
+        opacity: 0.8;
+        transform: translate3d(-105%, 0, -50px) rotateY(25deg) scale(0.95);
+    }
+
+    .carousel-slide.next-slide:hover {
+        opacity: 0.8;
+        transform: translate3d(105%, 0, -50px) rotateY(-25deg) scale(0.95);
+    }
+
+    /* Navigation Controls Outside Container */
+    .carousel-control {
+        width: 50px;
+        height: 50px;
+    }
+    .carousel-control.prev {
+        left: -60px;
+    }
+    .carousel-control.next {
+        right: -60px;
+    }
+    .carousel-control svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Dots below Cover Flow */
+    .carousel-dots {
+        bottom: -50px;
+        gap: 12px;
+    }
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+    }
 }
 
 /* Aspect ratios for the 3-column rows (col-4) */
