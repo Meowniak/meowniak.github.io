@@ -522,6 +522,16 @@ button, input, select, textarea {
     aspect-ratio: 2.1/1;
     max-height: 500px;
 }
+.gallery-item.col-12 .editorial-img {
+    object-position: center center;
+}
+/* Prevent cutting off heads in group landscape images */
+.gallery-item img[src*="MDP05532.webp"] {
+    object-position: center 65% !important;
+}
+.gallery-item img[src*="MDP06011.webp"] {
+    object-position: center 60% !important;
+}
 
 /* Captions Editorial Reveal */
 .gallery-info {
@@ -1038,14 +1048,14 @@ select {
 }
 
 .hero-subtitle-simple-para {
-    font-family: var(--font-body);
-    font-size: 1.05rem;
-    font-weight: 300;
-    line-height: 1.85;
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1.8;
     color: var(--text-secondary);
-    max-width: 680px;
+    max-width: 720px;
     margin: 1.5rem auto 0;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.01em;
 }
 
 /* Split Column Editorial Layout */
@@ -1079,11 +1089,12 @@ select {
 }
 
 .split-paragraph {
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    font-weight: 300;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 400;
     line-height: 1.85;
     color: var(--text-secondary);
+    letter-spacing: 0.01em;
 }
 
 /* Overlay Landscape Section */
@@ -1629,7 +1640,8 @@ img[src*="MDP06104.webp"] {
 }
 
 .glassy-see-more-overlay .glassy-subtitle {
-    font-size: 0.95rem;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
     color: rgba(255, 255, 255, 0.85);
     line-height: 1.6;
     margin-bottom: 2rem;
