@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         let currentIndex = 0;
         let autoplayTimer = null;
-        const autoplayInterval = 4000; // 4 seconds
+        const autoplayInterval = 3000; // 3 seconds (swifter autoplay)
 
         function showSlide(index) {
             if (index >= slides.length) {
@@ -388,9 +388,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 startAutoplay();
             });
         });
-
-        container.addEventListener('mouseenter', stopAutoplay);
-        container.addEventListener('mouseleave', startAutoplay);
 
         // Initial setup
         showSlide(0);
