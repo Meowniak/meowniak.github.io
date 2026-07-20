@@ -1178,41 +1178,59 @@ select {
         letter-spacing: 2px;
     }
     
+    .container {
+        padding: 0 1.5rem;
+    }
+
     .editorial-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1.25rem;
     }
     
-    .gallery-item.col-4,
-    .gallery-item.col-5,
-    .gallery-item.col-6,
-    .gallery-item.col-7,
+    /* Retain original grid column layout on mobile so they are side-by-side */
+    .gallery-item.col-4 {
+        grid-column: span 4;
+    }
+    .gallery-item.col-5 {
+        grid-column: span 5;
+    }
+    .gallery-item.col-6 {
+        grid-column: span 6;
+    }
+    .gallery-item.col-7 {
+        grid-column: span 7;
+    }
     .gallery-item.col-12 {
         grid-column: span 12;
     }
 
-    .gallery-item.col-7 .image-wrapper,
-    .gallery-item.col-12 .image-wrapper {
-        aspect-ratio: 4/3;
-        max-height: none;
-    }
-
     .gallery-item.col-4 .image-wrapper,
     .gallery-item.col-5 .image-wrapper,
-    .gallery-item.col-6 .image-wrapper {
+    .gallery-item.col-6 .image-wrapper,
+    .gallery-item.col-7 .image-wrapper {
         aspect-ratio: auto;
     }
 
     .gallery-item.col-4 .editorial-img,
     .gallery-item.col-5 .editorial-img,
-    .gallery-item.col-6 .editorial-img {
+    .gallery-item.col-6 .editorial-img,
+    .gallery-item.col-7 .editorial-img {
         height: auto;
+    }
+
+    .gallery-item.col-12 .image-wrapper {
+        aspect-ratio: 16/9;
+        max-height: 250px;
+    }
+    .gallery-item.col-12 .editorial-img {
+        height: 100%;
+        object-fit: cover;
     }
 
     /* Split column and overlay responsive overrides */
     .split-row, .split-row.reverse {
         flex-direction: column;
-        gap: 2.5rem;
+        gap: 2rem;
     }
     .split-col {
         width: 100%;
@@ -1223,13 +1241,23 @@ select {
     .split-title {
         font-size: 1.8rem;
     }
+    .split-image .image-wrapper {
+        aspect-ratio: 4/5;
+        max-height: 380px;
+    }
+    .split-image .editorial-img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+    }
     .full-bleed-hero-overlay .image-wrapper {
-        aspect-ratio: 4/3;
-        max-height: none;
+        aspect-ratio: 16/9;
+        max-height: 250px;
     }
     .overlay-quote {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
         line-height: 1.4;
+        padding: 0 1rem;
     }
     
     .booking-wizard-container {
