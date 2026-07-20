@@ -1,5 +1,128 @@
 document.addEventListener('DOMContentLoaded', () => {
     // =========================================
+    // 0. Dynamic Content Generation from config.js
+    // =========================================
+    if (typeof MANDAP_CONFIG !== 'undefined') {
+        renderDynamicContent();
+    }
+
+    function renderDynamicContent() {
+        // 1. Render Carousel Slides and Dots
+        const slidesContainer = document.getElementById('carousel-slides-container');
+        const dotsContainer = document.getElementById('carousel-dots-container');
+        
+        if (slidesContainer && MANDAP_CONFIG.carouselImages) {
+            slidesContainer.innerHTML = MANDAP_CONFIG.carouselImages.map((img, idx) => `
+                <div class="carousel-slide ${idx === 0 ? 'active' : ''}">
+                    <img src="${img.src}" alt="${img.alt}" class="carousel-img">
+                </div>
+            `).join('');
+        }
+        
+        if (dotsContainer && MANDAP_CONFIG.carouselImages) {
+            dotsContainer.innerHTML = MANDAP_CONFIG.carouselImages.map((_, idx) => `
+                <span class="carousel-dot ${idx === 0 ? 'active' : ''}" data-index="${idx}"></span>
+            `).join('');
+        }
+
+        // 2. Render Editorial Sections
+        const editorialContainer = document.getElementById('editorial-sections-container');
+        if (editorialContainer && MANDAP_CONFIG.editorialSections) {
+            editorialContainer.innerHTML = MANDAP_CONFIG.editorialSections.map(section => `
+                <section class="split-editorial-section section-padding-y">
+                    <div class="container">
+                        <div class="split-row ${section.reverse ? 'reverse' : ''}">
+                            ${section.reverse ? `
+                                <div class="split-col split-text col-6">
+                                    <div class="split-text-inner">
+                                        <h2 class="split-title">${section.title}</h2>
+                                        <p class="split-paragraph">${section.paragraph}</p>
+                                    </div>
+                                </div>
+                                <div class="split-col split-image col-6">
+                                    <div class="image-wrapper">
+                                        <img src="${section.imageSrc}" alt="${section.imageAlt}" class="editorial-img">
+                                    </div>
+                                </div>
+                            ` : `
+                                <div class="split-col split-image col-6">
+                                    <div class="image-wrapper">
+                                        <img src="${section.imageSrc}" alt="${section.imageAlt}" class="editorial-img">
+                                    </div>
+                                </div>
+                                <div class="split-col split-text col-6">
+                                    <div class="split-text-inner">
+                                        <h2 class="split-title">${section.title}</h2>
+                                        <p class="split-paragraph">${section.paragraph}</p>
+                                    </div>
+                                </div>
+                            `}
+                        </div>
+                    </div>
+                </section>
+            `).join('');
+        }
+
+        // 3. Render Parallax Quote Section
+        const parallaxContainer = document.getElementById('parallax-section-container');
+        if (parallaxContainer && MANDAP_CONFIG.quoteDivider) {
+            parallaxContainer.innerHTML = `
+                <div class="container">
+                    <div class="gallery-item col-12 full-bleed-hero-overlay">
+                        <div class="image-wrapper">
+                            <img src="${MANDAP_CONFIG.quoteDivider.imageSrc}" alt="${MANDAP_CONFIG.quoteDivider.imageAlt}" class="editorial-img">
+                            <div class="image-overlay-content">
+                                <h2 class="overlay-quote">"${MANDAP_CONFIG.quoteDivider.quote}"</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // 4. Render Main Portfolio Grid
+        const gridContainer = document.getElementById('portfolio-grid-container');
+        if (gridContainer && MANDAP_CONFIG.galleryGrid && MANDAP_CONFIG.seeMoreCover) {
+            let htmlContent = '';
+
+            // Add the Cover Placeholder (First item in grid)
+            htmlContent += `
+                <div class="gallery-item col-12 full-bleed-hero-overlay see-more-placeholder-item visible">
+                    <div class="image-wrapper">
+                        <img src="${MANDAP_CONFIG.seeMoreCover.imageSrc}" alt="${MANDAP_CONFIG.seeMoreCover.imageAlt}" class="editorial-img placeholder-landscape-img">
+                        <div class="glassy-see-more-overlay">
+                            <div class="glassy-content">
+                                <h3 class="glassy-title">${MANDAP_CONFIG.seeMoreCover.title}</h3>
+                                <p class="glassy-subtitle">${MANDAP_CONFIG.seeMoreCover.subtitle}</p>
+                                <button class="btn btn-gold see-more-btn" id="see-more-trigger">${MANDAP_CONFIG.seeMoreCover.buttonText}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // repeating column pattern sequence
+            const gridPattern = [6, 6, 5, 7, 6, 6, 12, 7, 5, 12, 5, 7, 12];
+
+            // Render remaining images
+            MANDAP_CONFIG.galleryGrid.forEach((img, idx) => {
+                // Determine column size based on index in pattern (unless overridden)
+                const colSize = img.colSize || gridPattern[idx % gridPattern.length];
+                
+                htmlContent += `
+                    <div class="gallery-item col-${colSize} hidden-initially">
+                        <div class="image-wrapper">
+                            <img src="${img.src}" alt="${img.alt}" class="editorial-img">
+                        </div>
+                    </div>
+                `;
+            });
+
+            gridContainer.innerHTML = htmlContent;
+        }
+    }
+
+    // =========================================
     // 1. Copyright Year Auto-Update
     // =========================================
     const yearSpan = document.getElementById('year');

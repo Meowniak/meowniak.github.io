@@ -64,29 +64,12 @@
                 </div>
             </section>
 
-            <!-- Top Image Carousel (First 6 Portraits) -->
+            <!-- Top Image Carousel (Dynamic) -->
             <section class="carousel-section section-padding-bottom">
                 <div class="container">
                     <div class="carousel-container">
-                        <div class="carousel-slides">
-                            <div class="carousel-slide active">
-                                <img src="assets/NIS_2836.webp" alt="Wedding portrait 1" class="carousel-img">
-                            </div>
-                            <div class="carousel-slide">
-                                <img src="assets/MDP09312_jpgfinal.webp" alt="Wedding portrait 2" class="carousel-img">
-                            </div>
-                            <div class="carousel-slide">
-                                <img src="assets/MDP00458.webp" alt="Wedding portrait 3" class="carousel-img">
-                            </div>
-                            <div class="carousel-slide">
-                                <img src="assets/MDP05342.webp" alt="Wedding portrait 4" class="carousel-img">
-                            </div>
-                            <div class="carousel-slide">
-                                <img src="assets/MDP06391.webp" alt="Wedding portrait 5" class="carousel-img">
-                            </div>
-                            <div class="carousel-slide">
-                                <img src="assets/MDP05844.webp" alt="Wedding portrait 6" class="carousel-img">
-                            </div>
+                        <div class="carousel-slides" id="carousel-slides-container">
+                            <!-- Dynamically populated from config.js -->
                         </div>
 
                         <!-- Transparent Navigation Controls -->
@@ -102,180 +85,28 @@
                         </button>
 
                         <!-- Pagination Dots -->
-                        <div class="carousel-dots">
-                            <span class="carousel-dot active" data-index="0"></span>
-                            <span class="carousel-dot" data-index="1"></span>
-                            <span class="carousel-dot" data-index="2"></span>
-                            <span class="carousel-dot" data-index="3"></span>
-                            <span class="carousel-dot" data-index="4"></span>
-                            <span class="carousel-dot" data-index="5"></span>
+                        <div class="carousel-dots" id="carousel-dots-container">
+                            <!-- Dynamically populated from config.js -->
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Split Row Section 1 (Left Image, Right Text) -->
-            <section class="split-editorial-section section-padding-y">
-                <div class="container">
-                    <div class="split-row">
-                        <div class="split-col split-image col-6">
-                            <div class="image-wrapper">
-                                <img src="assets/MDP05870.webp" alt="Bridal portrait details" class="editorial-img">
-                            </div>
-                        </div>
-                        <div class="split-col split-text col-6">
-                            <div class="split-text-inner">
-                                <h2 class="split-title">Expert Direction, Not Posing</h2>
-                                <p class="split-paragraph">We guide you gently when the light is perfect, but we
-                                    prioritize the real, unforced version of you. No stiff stances, no checklist
-                                    performance. We curate the light, direct the space, and let your genuine connection
-                                    unfold naturally.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Dynamic Editorial Split Sections -->
+            <div id="editorial-sections-container">
+                <!-- Dynamically populated from config.js -->
+            </div>
+
+            <!-- Landscape Image with Text Overlay (Dynamic) -->
+            <section class="parallax-overlay-section section-padding-y" id="parallax-section-container">
+                <!-- Dynamically populated from config.js -->
             </section>
 
-            <!-- Split Row Section 2 (Left Text, Right Image) -->
-            <section class="split-editorial-section section-padding-y">
-                <div class="container">
-                    <div class="split-row reverse">
-                        <div class="split-col split-text col-6">
-                            <div class="split-text-inner">
-                                <h2 class="split-title">Documentary Storytelling</h2>
-                                <p class="split-paragraph">Every laugh, every quiet glance, every tear. We capture the
-                                    day exactly as it felt, preserving the atmosphere, the light, and the deep emotions
-                                    in their truest form. You will not need to manage us or worry about what comes next.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="split-col split-image col-6">
-                            <div class="image-wrapper">
-                                <img src="assets/MDP06269.webp" alt="Couple walk portrait" class="editorial-img">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Landscape Image with Text Overlay -->
-            <section class="parallax-overlay-section section-padding-y">
-                <div class="container">
-                    <div class="gallery-item col-12 full-bleed-hero-overlay">
-                        <div class="image-wrapper">
-                            <img src="assets/MDP00484.webp" alt="Wedding landscape ceremony" class="editorial-img">
-                            <div class="image-overlay-content">
-                                <h2 class="overlay-quote">"We want you to look back at these photos and remember how it
-                                    felt, not just how it looked."</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Main Portfolio Grid (Remaining 14 Photos) -->
+            <!-- Main Portfolio Grid (Dynamic) -->
             <section class="gallery-section main-portfolio section-padding-y">
                 <div class="container">
-                    <div class="editorial-grid">
-                        <!-- See More Landscape Placeholder (First photo in grid) -->
-                        <div class="gallery-item col-12 full-bleed-hero-overlay see-more-placeholder-item visible">
-                            <div class="image-wrapper">
-                                <img src="assets/MDP00412.webp" alt="Couples portrait landscape" class="editorial-img placeholder-landscape-img">
-                                <div class="glassy-see-more-overlay">
-                                    <div class="glassy-content">
-                                        <h3 class="glassy-title">The Quiet Chapters</h3>
-                                        <p class="glassy-subtitle">Unfold the unscripted moments of the day.</p>
-                                        <button class="btn btn-gold see-more-btn" id="see-more-trigger">See More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Diptych 1 -->
-                        <div class="gallery-item col-6 hidden-initially">
-                            <div class="image-wrapper">
-                                <img src="assets/MDP06321.webp" alt="Wedding portrait details" class="editorial-img">
-                            </div>
-                        </div>
-                        <div class="gallery-item col-6 hidden-initially">
-                            <div class="image-wrapper">
-                                <img src="assets/MDP04986.webp" alt="Bridal portrait details" class="editorial-img">
-                            </div>
-                        </div>
-
-                        <!-- Asymmetric Pair 1 -->
-                        <div class="gallery-item col-5 hidden-initially">
-                            <div class="image-wrapper">
-                                <img src="assets/MDP09620.webp" alt="Wedding portrait groom" class="editorial-img">
-                            </div>
-                        </div>
-                        <div class="gallery-item col-7 hidden-initially">
-                            <div class="image-wrapper">
-                                <img src="assets/MDP00534.webp" alt="Couples walk landscape" class="editorial-img">
-                            </div>
-                        </div>
-
-                        <!-- Diptych 2 -->
-                        <div class="gallery-item col-6 hidden-initially">
-                            <div class="image-wrapper">
-                                <img src="assets/MDP09693.webp" alt="Wedding details reception" class="editorial-img">
-                            </div>
-                        </div>
-                        <div class="gallery-item col-6 hidden-initially">
-                            <div class="image-wrapper">
-                                <img src="assets/MDP09854.webp" alt="Wedding portrait details reception"
-                                    class="editorial-img">
-                            </div>
-                        </div>
-
-                        <!-- Landscape 2 -->
-                        <div class="gallery-item col-12 hidden-initially">
-                            <div class="image-wrapper">
-                                <img src="assets/MDP05532.webp" alt="Wedding couple walk outdoor ceremony"
-                                    class="editorial-img">
-                            </div>
-                        </div>
-
-                        <!-- Asymmetric Pair 2 -->
-                        <div class="gallery-item col-7 hidden-initially">
-                            <div class="image-wrapper">
-                                <img src="assets/MDP05555.webp" alt="Wedding couple walk outdoor ceremony"
-                                    class="editorial-img">
-                            </div>
-                        </div>
-                        <div class="gallery-item col-5 hidden-initially">
-                            <div class="image-wrapper">
-                                <img src="assets/NIS_2120.webp" alt="Wedding portrait details" class="editorial-img">
-                            </div>
-                        </div>
-
-                        <!-- Landscape 3 -->
-                        <div class="gallery-item col-12 hidden-initially">
-                            <div class="image-wrapper">
-                                <img src="assets/MDP06011.webp" alt="Wedding reception design" class="editorial-img">
-                            </div>
-                        </div>
-
-                        <!-- Asymmetric Pair 3 -->
-                        <div class="gallery-item col-5 hidden-initially">
-                            <div class="image-wrapper">
-                                <img src="assets/MDP04988.webp" alt="Wedding portrait ceremony" class="editorial-img">
-                            </div>
-                        </div>
-                        <div class="gallery-item col-7 hidden-initially">
-                            <div class="image-wrapper">
-                                <img src="assets/MDP06050.webp" alt="Wedding reception outdoor design"
-                                    class="editorial-img">
-                            </div>
-                        </div>
-
-                        <!-- Landscape 4 -->
-                        <div class="gallery-item col-12 hidden-initially">
-                            <div class="image-wrapper">
-                                <img src="assets/MDP06104.webp" alt="Wedding reception outdoor layout"
-                                    class="editorial-img">
-                            </div>
-                        </div>
+                    <div class="editorial-grid" id="portfolio-grid-container">
+                        <!-- Dynamically populated from config.js -->
                     </div>
                 </div>
             </section>
@@ -446,6 +277,7 @@
         </div>
     </footer>
 
+    <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
 
